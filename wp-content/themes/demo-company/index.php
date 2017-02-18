@@ -16,9 +16,24 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<div class="slider">
 
-				
+			</div>
 
+			<div class="pages">
+				<div class="container">
+					<div class="page-box">
+						<div class="page-title">
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+						<div class="content-list">
+
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>  <!-- #main -->
 	</div>  <!-- #primary -->
 

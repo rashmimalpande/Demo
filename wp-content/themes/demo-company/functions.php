@@ -141,3 +141,7 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+require get_template_directory() . '/lib/slider/slider.php';
+require get_template_directory() . '/lib/slider/slider_post_type.php';
+

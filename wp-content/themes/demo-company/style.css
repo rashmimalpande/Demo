@@ -912,3 +912,36 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*--------------------------------------------------------------
+## Content
+--------------------------------------------------------------*/
+
+.slider,
+.pages{
+	width: 100%;
+	height: 350px;
+	
+}
+
+.slider{
+	background: #ccc;
+}
+
+.page-box{
+	width: 100%;
+	margin: 30px auto;
+	border: 1px solid #ccc;
+	height: 300px;
+	position: relative;
+	display: flex;
+}
+
+.page-title{
+	width: 30%;
+	background: #eee;
+}
+
+.content-list{
+	width: 70%;
+}
