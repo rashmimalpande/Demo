@@ -17,10 +17,34 @@
 			<div class="footer-main">
 				<div class="container">
 					<div class="footer-top">
-						<div class="footer-col-1"></div>
-						<div class="footer-col-2"></div>
-						<div class="footer-col-3"></div>
-						<div class="footer-col-4"></div>
+						<div class="footer-col-1">
+							<?php
+								if(is_active_sidebar('footer_col_1')){
+									dynamic_sidebar('footer_col_1');
+								}
+							?>
+						</div>
+						<div class="footer-col-2">
+							<?php
+								if(is_active_sidebar('footer_col_2')){
+									dynamic_sidebar('footer_col_2');
+								}
+							?>
+						</div>
+						<div class="footer-col-3">
+							<?php
+								if(is_active_sidebar('footer_col_3')){
+									dynamic_sidebar('footer_col_3');
+								}
+							?>
+						</div>
+						<div class="footer-col-4">
+							<?php
+								if(is_active_sidebar('footer_col_4')){
+									dynamic_sidebar('footer_col_4');
+								}
+							?>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -998,3 +998,17 @@ li.page_item a{
 .footer-col-4{
 	width: 25%;
 }
+
+.widget-title{
+	border-bottom: 1px dashed black;
+	padding-bottom: 5px;	
+}
+
+.footer-top ul{
+	margin: 0;
+	padding: 0;
+}
+
+.footer-top ul li{
+	padding: 10px;
+}

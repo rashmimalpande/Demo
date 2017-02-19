@@ -117,6 +117,53 @@ function demo_company_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'demo_company_scripts' );
 
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function demo_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Footer Column 1',
+		'id'            => 'footer_col_1',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Column 2',
+		'id'            => 'footer_col_2',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Column 3',
+		'id'            => 'footer_col_3',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Column 4',
+		'id'            => 'footer_col_4',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+}
+add_action( 'widgets_init', 'demo_widgets_init' );
+
+
 /**
  * Implement the Custom Header feature.
  */
