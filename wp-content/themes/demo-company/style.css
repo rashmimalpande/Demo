@@ -938,13 +938,40 @@ object {
 	display: flex;
 }
 
-.page-title{
+.sub-page-title{
 	width: 30%;
 	background: #eee;
 }
 
+.sub-page-title ul{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+li.page_item{
+	list-style: none;
+	padding: 20px;
+}
+
+li.page_item a{
+	text-decoration: none;
+	text-transform: uppercase;
+}
 .content-list{
 	width: 70%;
+	display: flex;
+}
+
+.sub-page-col{
+	width: 33.3333%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.sub-page-content{
+	margin: 20px;
 }
 
 .site-footer{
