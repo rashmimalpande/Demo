@@ -997,6 +997,7 @@ li.page_item a{
 .footer-col-3,
 .footer-col-4{
 	width: 25%;
+	margin-right: 20px;
 }
 
 .widget-title{

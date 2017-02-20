@@ -163,9 +163,175 @@ function demo_widgets_init() {
 }
 add_action( 'widgets_init', 'demo_widgets_init' );
 
+class News_Widget_Demo extends WP_Widget{
+	public function __construct(){
+		$widget_options = array(
+			'classname'=> 'news_widget',
+			'description' => 'Display posts from News Category'
+		);
 
-/**
- * Implement the Custom Header feature.
+		parent::__construct('news_widget', 'News Widget', $widget_options);
+	}
+
+	public function form($instance){
+		if($instance){
+			$title = esc_attr($instance['title']);
+		}
+		else{
+			$title = '';
+		} 
+?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'news_widget'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />	
+		</p>
+
+
+<?php	
+
+	}
+
+	public function widget($args, $instance){
+		extract($args);
+		$title = apply_filters('widget_title', $instance['title']);
+		echo $before_widget;
+		if ( $title ) {
+			echo $before_title . $title . $after_title;
+		}
+
+		global $post;
+		$query = new WP_Query( array('category_name' => 'news'));
+		$count = 0;
+		if( $query->have_posts() && $count <= 3 ){
+			echo '<ul>';
+			while( $query->have_posts() ){
+				$query->the_post();
+				$list_item = '<li>';
+				$list_item .= '<a href="' . get_permalink() . '">';
+				$list_item .= get_the_title() . '</a></li>';
+				echo $list_item;
+				$count++;
+			}
+		}
+		echo '</ul>';
+		wp_reset_postdata();
+		echo $after_widget;
+	}
+
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
+		return $instance;
+	}
+}
+
+
+
+/*function getNewsCategory(){
+	global $post;
+	$list = new WP_Query();
+	$list = query('post_type=News&posts_per_page=3');
+	echo '<ul>';
+	while($list->have_posts()){
+		$list = the_post();
+		$list_item = '<li>';
+		$listItem .= '<a href="' . get_permalink() . '">';
+		$listItem .= get_the_title() . '</a></li>';
+	}
+	echo '</ul>';
+	wp_reset_postdata();
+}
+*/
+
+function news_widget() { 
+  register_widget( 'News_Widget_Demo' );
+}
+
+add_action( 'widgets_init', 'news_widget' );
+
+class Social_Widget_Demo extends WP_Widget{
+	public function __construct(){
+		$widget_options = array(
+			'classname'=> 'social_widget',
+			'description' => 'Social Media Links'
+		);
+
+		parent::__construct('social_widget', 'Social Widget', $widget_options);
+	}
+
+	public function form($instance){
+		if($instance){
+			$title = esc_attr($instance['title']);
+			$facebook = esc_attr($instance['facebook']);
+			$twitter = esc_attr($instance['twitter']);
+			$linkedin = esc_attr($instance['linkedin']);
+		}
+		else{
+			$title = '';
+		} 
+?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'social_widget'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />	
+			
+			<label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook', 'social_widget'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" value="<?php echo $facebook; ?>" />	
+			
+			<label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter', 'social_widget'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo $twitter; ?>" />	
+			
+			<label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('Linkedin', 'social_widget'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" type="text" value="<?php echo $linkedin; ?>" />	
+		</p>
+
+
+<?php	
+
+	}
+
+	public function widget($args, $instance){
+		extract($args);
+		$title = apply_filters('widget_title', $instance['title']);
+		$facebook = $instance['facebook'];
+		$twitter = $instance['twitter'];
+		$linkedin = $instance['linkedin'];
+		echo $before_widget;
+		if ( $title ) {
+			echo $before_title . $title . $after_title;
+		}
+		
+		$fb_profile = '<a href=" '. $facebook . '">Facebook</a>';
+		$tw_profile = '<a href=" '. $twitter . '">Twitter</a>';
+		$lk_profile = '<a href=" '. $linkedin . '">linkedIn</a>';
+
+		echo '<ul>';
+		echo '<li>'. $fb_profile. '</li>';
+		echo '<li>'. $tw_profile. '</li>';
+		echo '<li>'. $lk_profile. '</li>';
+		echo '</ul>';
+		echo $after_widget;
+	}
+
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
+		$instance['facebook'] = strip_tags($new_instance['facebook']);
+		$instance['twitter'] = strip_tags($new_instance['twitter']);
+		$instance['linkedin'] = strip_tags($new_instance['linkedin']);
+		return $instance;
+	}
+}
+
+function social_widget() { 
+  register_widget( 'Social_Widget_Demo' );
+}
+
+add_action( 'widgets_init', 'social_widget' );
+
+
+ /* Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
 
@@ -192,3 +358,4 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/lib/slider/slider.php';
 require get_template_directory() . '/lib/slider/slider_post_type.php';
 
+?>
