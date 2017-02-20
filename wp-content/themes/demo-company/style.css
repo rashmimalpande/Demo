@@ -46,6 +46,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+@import "//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css";
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -981,7 +982,7 @@ li.page_item a{
 
 .footer-main{
 	width: 100%;
-	background: #e7e7e7;
+	background: #f8f8f8;;
 	height: 300px;
 }
 
@@ -1011,5 +1012,15 @@ li.page_item a{
 }
 
 .footer-top ul li{
-	padding: 10px;
+	padding-bottom: 10px;
+	list-style: none;
+}
+
+.footer-top a{
+	text-decoration: none;
+}
+
+.footer-top i{
+	padding: 5px;
+	font-size: 20px;
 }

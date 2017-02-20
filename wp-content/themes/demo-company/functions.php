@@ -302,9 +302,9 @@ class Social_Widget_Demo extends WP_Widget{
 			echo $before_title . $title . $after_title;
 		}
 		
-		$fb_profile = '<a href=" '. $facebook . '">Facebook</a>';
-		$tw_profile = '<a href=" '. $twitter . '">Twitter</a>';
-		$lk_profile = '<a href=" '. $linkedin . '">linkedIn</a>';
+		$fb_profile = '<a href=" '. $facebook . '"><i class="fa fa-facebook"></i> Facebook</a>';
+		$tw_profile = '<a href=" '. $twitter . '"><i class="fa fa-twitter"></i>Twitter</a>';
+		$lk_profile = '<a href=" '. $linkedin . '"><i class="fa fa-linkedin"></i>linkedIn</a>';
 
 		echo '<ul>';
 		echo '<li>'. $fb_profile. '</li>';
@@ -330,6 +330,10 @@ function social_widget() {
 
 add_action( 'widgets_init', 'social_widget' );
 
+function demo_social_profile_widget_css() {
+        wp_enqueue_style('social-profile-widget', plugins_url('style.css', __FILE__));
+}
+add_action('wp_enqueue_scripts', 'demo_social_profile_widget_css');
 
  /* Implement the Custom Header feature.
  */
