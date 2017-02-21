@@ -1006,7 +1006,8 @@ li.page_item a{
 	padding-bottom: 5px;	
 }
 
-.footer-top ul{
+.footer-top ul,
+#footer-menu {
 	margin: 0;
 	padding: 0;
 }
@@ -1016,11 +1017,36 @@ li.page_item a{
 	list-style: none;
 }
 
-.footer-top a{
+.footer-top a,
+#footer-menu a{
 	text-decoration: none;
 }
 
 .footer-top i{
 	padding: 5px;
 	font-size: 20px;
+}
+
+#footer-menu{
+	padding-top: 20px;
+}
+
+#footer-menu .menu-item{
+	list-style: none;
+	display: inline;
+	padding-right: 20px;
+}
+
+.footer-info{
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-bottom{
+	width: 60%;
+}
+
+.footer-logo{
+	float: right;
+	padding-top: 20px;
 }

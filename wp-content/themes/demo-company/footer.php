@@ -49,10 +49,23 @@
 				</div>
 			</div>
 			<div class="site-info">
-				<div class="container">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'demo-company' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'demo-company' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'demo-company' ), 'demo-company', '<a href="https://automattic.com/" rel="designer">Rashmi M</a>' ); ?>
+				<div class="container footer-info">
+					<div class="footer-bottom">
+						<div class="footer-nav">
+							<?php wp_nav_menu( array( 'menu' => 'Footer Menu', 'menu_id' => 'footer-menu' ) ); ?>
+						</div>
+						<div class="company-info">
+							<p>Copyright - 2011 rtPanel. All Rights Reserved.</p>
+						</div>
+
+						
+					</div>
+
+					<div class="footer-logo">
+							<img src="http://placehold.it/100X100">
+					</div>
+
+					
 				</div><!-- .site-info -->
 			</div>
 	</footer><!-- #colophon -->

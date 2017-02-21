@@ -330,10 +330,10 @@ function social_widget() {
 
 add_action( 'widgets_init', 'social_widget' );
 
-function demo_social_profile_widget_css() {
-        wp_enqueue_style('social-profile-widget', plugins_url('style.css', __FILE__));
+function demo_css() {
+        wp_enqueue_style('style', get_stylesheet_uri());
 }
-add_action('wp_enqueue_scripts', 'demo_social_profile_widget_css');
+add_action('wp_enqueue_scripts', 'demo_css');
 
  /* Implement the Custom Header feature.
  */
