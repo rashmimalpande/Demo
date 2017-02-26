@@ -28,10 +28,11 @@
 			<div class="header-container">
 				<div class="site-branding">
 					<?php
-					if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					if ( has_custom_logo() && function_exists(the_custom_logo)) : 
+						the_custom_logo();
+					?>
 					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<a class="custom-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="custom-logo" src="<?php echo get_template_directory_uri().'/images/logo.png'; ?> " width="200" height="30"></a>
 					<?php
 					endif; ?>
 
