@@ -961,7 +961,7 @@ li.page_item a{
 }
 .content-list{
 	width: 70%;
-	display: flex;
+	display: none;
 }
 
 .sub-page-col{
@@ -1050,3 +1050,4 @@ li.page_item a{
 	float: right;
 	padding-top: 20px;
 }
+

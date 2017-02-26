@@ -55,14 +55,31 @@
 							<?php wp_nav_menu( array( 'menu' => 'Footer Menu', 'menu_id' => 'footer-menu' ) ); ?>
 						</div>
 						<div class="company-info">
-							<p>Copyright - 2011 rtPanel. All Rights Reserved.</p>
+							
+							<?php 
+								global $copyright;
+								if(get_theme_mod('footer-copyright')): 
+								$copyright = get_theme_mod('footer-copyright');
+							?>
+
+							<p><?php echo get_theme_mod('footer-copyright'); ?></p>
+							<?php else: ?>
+							<p>© 2017 Demo All Rights Reserved.</p>
+							<?php endif; ?>
 						</div>
 
 						
 					</div>
 
 					<div class="footer-logo">
-							<img src="http://placehold.it/100X100">
+							<?php if( get_theme_mod('footer-logo')): 
+								$id = get_theme_mod('footer-logo');
+								$url = wp_get_attachment_url($id);
+								echo '<img src="'.$url.'">';
+							?>
+							<?php else: ?>
+								<img src="<?php echo get_template_directory_uri().'/images/footer-logo.png'; ?> " width="200" height="30">
+							<?php endif; ?>
 					</div>
 
 					

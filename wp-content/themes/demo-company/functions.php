@@ -343,79 +343,6 @@ function demo_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'demo_scripts' ); 
 
-//Rigister Theme options
-function demo_register_settings(){
-	register_setting('demo_theme_options', 'demo_options', 'demo_options_validate'); //($option_group,setting name, sanitize )
-}
-
-add_action('admin_init', 'demo_register_settings');
-
-
-$demo_options = array( 
-	'footer_copyright' => '&copy;'. date('Y'). get_bloginfo('name'). 'All Right Reserved.',
-	'logo' =>''
-);
-
-
-function demo_theme_options(){
-	add_theme_page('Theme Options', 'Theme Options', 'edit_theme_options', 'theme_options','demo_theme_options_page');
-}
-
-add_action('admin_menu', 'demo_theme_options');
-
-function demo_theme_options_page(){
-	global $demo_options;
-
-	if(! isset( $_REQUEST['updated'])){
-		$_REQUEST['updated'] = false; 
-	}?>
-	<div class="wrap">
-	<?php
-		if(false !== $_REQUEST['updated']):
-	?>
-	<div><p><strong><?php _e('Options Saved'); ?></strong></p></div>
-	<?php endif; ?>
-
-	<form method="Post" action="options.php">
-	<?php 
-		$settings = get_option('demo_options', $demo_options); 
-		settings_fields('demo_theme_options'); //parameter same as options group
-	?>
-
-	<table class="form-table">
-		<tr>
-			<td>Footer Copyright</td>
-			<td>
-				<input type="text" id="footer_copyright" name="demo_options[footer_copyright]" value="<?php esc_attr_e($settings['footer_copyright']); ?>" style="width: 300px;" >
-			</td>
-		</tr>
-		<tr>
-			<td>Header Logo</td>
-			<td>
-				<input type="text" id="logo_url" name="demo_options['logo']" value="<?php esc_url($settings['logo']); ?>" >
-				<input type="button" id="upload_logo_button" class="button" name="demo_options['logo']" value="<?php _e('Upload Logo') ?>" >
-			</td>
-		</tr>
-	</table>
-
-	<p><input type="submit" value="Save Options" class="button-primary"></p>
-	</form>
-	</div>
-
-
-<?php  
-
-}
-
-function demo_options_validate($input){
-	global $demo_options;
-	$settings = get_option('demo_options', $demo_options); 
-
-	$input['footer_copyright'] = wp_filter_nohtml_kses( $input['footer_copyright'] );
-
-	return $input;
-
-}
 
 
 
@@ -433,6 +360,8 @@ function demo_add_theme_header_logo(){
 }
 
 add_action('after_setup_theme', demo_add_theme_header_logo);
+
+
 
  /* Implement the Custom Header feature.
  */

@@ -26,9 +26,11 @@ get_header(); ?>
 						<div class="sub-page-title">
 							<ul>
 								<?php wp_list_pages( array( 'title_li' => '', 'child_of' => 6 ) ); ?>
+								
 							</ul>
 						</div>
 						<div class="content-list">
+					
 							<div class="sub-page-col">
 								<div class="sub-page-content">
 									<img src="https://placehold.it/350X200">
@@ -37,6 +39,7 @@ get_header(); ?>
 								</div>
 								
 							</div>
+
 							<div class="sub-page-col">
 								<div class="sub-page-content">
 									<img src="https://placehold.it/350X200">
@@ -44,6 +47,7 @@ get_header(); ?>
 									<p>Page Excerpt</p>
 								</div>
 							</div>
+
 							<div class="sub-page-col">
 								<div class="sub-page-content">
 									<img src="https://placehold.it/350X200">
@@ -51,7 +55,9 @@ get_header(); ?>
 									<p>Page Excerpt</p>
 								</div>
 							</div>
-						</div>
+						</div><!-- #contentlist-->
+
+						
 					</div>
 				</div>
 			</div>
