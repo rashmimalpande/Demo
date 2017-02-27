@@ -332,13 +332,23 @@ add_action( 'widgets_init', 'social_widget' );
 
 function demo_css() {
         wp_enqueue_style('style', get_stylesheet_uri());
+		wp_enqueue_style('bootstrap', get_template_directory_uri() . '/lib/bootstrap.min.css');
+		wp_enqueue_style('owl.carousel', get_template_directory_uri(). '/lib/owl.carousel.min.css');
+		wp_enqueue_style('owl.theme.default', get_template_directory_uri(). '/lib/owl.theme.default.min.css');
+		wp_enqueue_style('animate', get_template_directory_uri(). '/lib/animate.css');
+		wp_enqueue_style('owl', get_template_directory_uri(). '/lib/owl.carousel.css');
+		
+		
+		
 }
 add_action('wp_enqueue_scripts', 'demo_css');
 
 function demo_scripts() {
-	wp_register_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'),'2.1', true);
+	wp_register_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'));	
 	wp_enqueue_script('script');
-
+	wp_enqueue_script('bootstrap', get_template_directory_uri(). '/lib/bootstrap.min.js');
+	wp_enqueue_script('owl', get_template_directory_uri(). '/lib/owl.carousel.min.js');
+	
 }
 
 add_action( 'wp_enqueue_scripts', 'demo_scripts' ); 
@@ -387,7 +397,6 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-require get_template_directory() . '/lib/slider/slider.php';
-require get_template_directory() . '/lib/slider/slider_post_type.php';
+
 
 ?>

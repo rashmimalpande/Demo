@@ -17,7 +17,14 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="slider">
-
+				<div class="container">
+					<div class="owl-carousel owl-theme">
+						<div class="owl-item"><img src="http://placehold.it/800X350?text=Slide%200"></div>
+						<div class="owl-item"><img src="http://placehold.it/800X350?text=Slide%201"></div>
+						<div class="owl-item"><img src="http://placehold.it/800X350?text=Slide%202"></div>
+						<div class="owl-item"><img src="http://placehold.it/800X350?text=Slide%203"></div>
+					</div>
+				</div>
 			</div>
 
 			<div class="pages">

@@ -734,6 +734,9 @@ a:active {
 	clear: both;
 }
 
+.site-header{
+	height: 80px;
+}
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -790,10 +793,14 @@ a:active {
 	width: 100%;
 	height: 60px;
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10px;
 }
 
 .site-branding{
 	width: 30%;
+	margin: auto;
 }
 
 .site-title{
@@ -930,6 +937,16 @@ object {
 	background: #ccc;
 }
 
+.slider .container{
+	height: 100% !important;
+}
+
+.owl-carousel{
+    width: 100%;
+    z-index: 1;
+    height: 100% !important;
+    overflow: hidden !important;
+}
 .page-box{
 	width: 100%;
 	margin: 30px auto;
