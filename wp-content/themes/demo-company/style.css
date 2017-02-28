@@ -947,6 +947,52 @@ object {
     height: 100% !important;
     overflow: hidden !important;
 }
+
+.owl-dots{
+	float: right;
+	margin: auto;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	position: absolute;
+	height: 100%;
+	background: #333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.slide{
+	width:1170px;
+	height: 350px;
+}
+
+.content{
+	width: 400px;
+	height: 100%;
+	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #333;
+	opacity: 0.8;
+}
+
+.content h2{
+	right: 0;
+	bottom: 0;
+	top: 0px;
+	color: #fff;
+	text-align: left;
+	margin-left: 20px;
+}
+
+.content p{
+	color: #fff;
+	margin: 20px;
+}
 .page-box{
 	width: 100%;
 	margin: 30px auto;

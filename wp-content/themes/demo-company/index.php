@@ -19,10 +19,32 @@ get_header(); ?>
 			<div class="slider">
 				<div class="container">
 					<div class="owl-carousel owl-theme">
-						<div class="owl-item"><img src="http://placehold.it/800X350?text=Slide%200"></div>
-						<div class="owl-item"><img src="http://placehold.it/800X350?text=Slide%201"></div>
-						<div class="owl-item"><img src="http://placehold.it/800X350?text=Slide%202"></div>
-						<div class="owl-item"><img src="http://placehold.it/800X350?text=Slide%203"></div>
+						<?php if(have_posts()) : while(have_posts()): the_post() ?>
+						<div>
+							<?php if(has_post_thumbnail()): ?>
+								<a href="<?php the_permalink(); ?>"><img class="slide" src="<?php the_post_thumbnail(); ?>"></a>
+							<?php else:
+								global $images, $image_id;
+								$images = get_posts(array(
+									 'post_type'=> 'attachment',
+									 'post_mime_type' => 'image',
+									 'post_parent' => get_the_ID(),
+									 'posts_per_page'=> 1
+								));								
+							?>
+								<?php if($images): 
+									$image_id =  wp_get_attachment_image_src( $images[0]->ID, 'post-thumbnail');
+								?>
+
+									<a href="<?php the_permalink(); ?>"><img class="slide" src="<?php echo $image_id[0]; ?>"></a>									
+								<?php endif; ?>
+							<?php endif;?>
+							<div class="content">
+								<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+								<p><?php the_excerpt(); ?></p>
+							</div>
+						</div>
+						<?php endwhile; endif; ?>
 					</div>
 				</div>
 			</div>
