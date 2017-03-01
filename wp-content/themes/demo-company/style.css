@@ -1027,6 +1027,13 @@ li.page_item a{
 	display: none;
 }
 
+#page-item-38{
+	display: flex;
+}
+
+.sub-page-title li.page_item a:hover + .content-list{
+	display: flex;
+}
 .sub-page-col{
 	width: 33.3333%;
 	position: relative;

@@ -54,38 +54,79 @@ get_header(); ?>
 					<div class="page-box">
 						<div class="sub-page-title">
 							<ul>
-								<?php wp_list_pages( array( 'title_li' => '', 'child_of' => 6 ) ); ?>
+								<?php wp_list_pages( array( 'title_li' => '', 'child_of' => 6, 'depth'=> 1 ) ) ?>
 								
 							</ul>
 						</div>
-						<div class="content-list">
+
+						<div class="content-list" id="page-item-38">
+							<?php
+								$args = array(
+									'post_parent' => 38,
+									'post_type' => 'page',
+									'orderby' => 'menu_order'
+								);
+								global $child_query;
+
+								$child_query = new WP_Query( $args );
+							?>
+
+								<?php while ( $child_query->have_posts() ) : $child_query->the_post(); ?>
+									<div class="sub-page-col">
+										<div class="sub-page-content">
+											<?php the_post_thumbnail(); ?>
+											<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+											<p><?php the_excerpt(); ?></p>
+										</div>
+									</div>
+								<?php endwhile; ?>
+						</div>
+
+						<div class="content-list" id="page-item-34">
+							<?php
+								$args = array(
+									'post_parent' => 34,
+									'post_type' => 'page',
+									'orderby' => 'menu_order'
+								);
+								global $child_query;
+
+								$child_query = new WP_Query( $args );
+							?>
+
+								<?php while ( $child_query->have_posts() ) : $child_query->the_post(); ?>
+									<div class="sub-page-col">
+										<div class="sub-page-content">
+											<?php the_post_thumbnail(); ?>
+											<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+											<p><?php the_excerpt(); ?></p>
+										</div>
+									</div>
+								<?php endwhile; ?>
+						</div>
 					
-							<div class="sub-page-col">
-								<div class="sub-page-content">
-									<img src="https://placehold.it/350X200">
-									<h4>title</h4>
-									<p>Page Excerpt</p>
-								</div>
-								
-							</div>
+						<div class="content-list" id="page-item-36">
+							<?php
+								$args = array(
+									'post_parent' => 34,
+									'post_type' => 'page',
+									'orderby' => 'menu_order'
+								);
+								global $child_query;
 
-							<div class="sub-page-col">
-								<div class="sub-page-content">
-									<img src="https://placehold.it/350X200">
-									<h4>title</h4>
-									<p>Page Excerpt</p>
-								</div>
-							</div>
+								$child_query = new WP_Query( $args );
+							?>
 
-							<div class="sub-page-col">
-								<div class="sub-page-content">
-									<img src="https://placehold.it/350X200">
-									<h4>title</h4>
-									<p>Page Excerpt</p>
-								</div>
-							</div>
-						</div><!-- #contentlist-->
-
+								<?php while ( $child_query->have_posts() ) : $child_query->the_post(); ?>
+									<div class="sub-page-col">
+										<div class="sub-page-content">
+											<?php the_post_thumbnail(); ?>
+											<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+											<p><?php the_excerpt(); ?></p>
+										</div>
+									</div>
+								<?php endwhile; ?>
+						</div>
 						
 					</div>
 				</div>
