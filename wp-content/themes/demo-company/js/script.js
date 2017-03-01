@@ -9,20 +9,10 @@ jQuery(document).ready(function(){
     });
 
     var list = jQuery('.content-list');
-    var id="#one";
-    jQuery('.sub-page-title .page-item-38 a').mouseover(function(){
-        list.hide().filter('#page-item-38').show();
+    jQuery('#display .menu-item').mouseover(function(){
+        list.hide().filter('#page-'+ this.id).css({'display': 'flex'});
 
     });
 
-    jQuery('.sub-page-title .page-item-34 a').mouseover(function(){
-        list.hide().filter('#page-item-34').css({'display': 'flex'});
-
-    });
-
-     jQuery('.sub-page-title .page-item-36 a').mouseover(function(){
-        list.hide().filter('#page-item-36').css({'display': 'flex'});
-
-    });
     
 });

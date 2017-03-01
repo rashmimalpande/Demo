@@ -54,18 +54,23 @@ get_header(); ?>
 					<div class="page-box">
 						<div class="sub-page-title">
 							<ul>
-								<?php wp_list_pages( array( 'title_li' => '', 'child_of' => 6, 'depth'=> 1 ) ) ?>
+								<?php wp_nav_menu( array('menu'=> 'Display', 'menu_id'=> 'display' ) ) ?>
 								
 							</ul>
 						</div>
 
-						<div class="content-list" id="page-item-38">
+						<?php $pages = wp_get_nav_menu_items('Display'); ?>
+
+						<div class="content-list" id="page-menu-item-<?php echo $pages[0]->ID ?>">
 							<?php
+								$ids = get_post_meta($pages[0]->ID, '_menu_item_object_id', false);
+								
 								$args = array(
-									'post_parent' => 38,
+									'post_parent' => $ids[0],
 									'post_type' => 'page',
 									'orderby' => 'menu_order'
 								);
+								
 								global $child_query;
 
 								$child_query = new WP_Query( $args );
@@ -82,10 +87,12 @@ get_header(); ?>
 								<?php endwhile; ?>
 						</div>
 
-						<div class="content-list" id="page-item-34">
+						<?php $pages = wp_get_nav_menu_items('Display'); ?>
+						<div class="content-list" id="page-menu-item-<?php echo $pages[1]->ID ?>">
 							<?php
+								$ids = get_post_meta($pages[1]->ID, '_menu_item_object_id', false);
 								$args = array(
-									'post_parent' => 34,
+									'post_parent' => $ids[0],
 									'post_type' => 'page',
 									'orderby' => 'menu_order'
 								);
@@ -105,10 +112,12 @@ get_header(); ?>
 								<?php endwhile; ?>
 						</div>
 					
-						<div class="content-list" id="page-item-36">
+						<?php $pages = wp_get_nav_menu_items('Display'); ?>						
+						<div class="content-list" id="page-menu-item-<?php echo $pages[2]->ID ?>">
 							<?php
+								$ids = get_post_meta($pages[2]->ID, '_menu_item_object_id', false);							
 								$args = array(
-									'post_parent' => 34,
+									'post_parent' => $ids[0],
 									'post_type' => 'page',
 									'orderby' => 'menu_order'
 								);

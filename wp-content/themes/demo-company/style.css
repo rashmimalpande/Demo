@@ -1013,12 +1013,12 @@ object {
 	padding: 0;
 }
 
-li.page_item{
+#display li.menu-item{
 	list-style: none;
 	padding: 20px;
 }
 
-li.page_item a{
+#display li.menu-item a{
 	text-decoration: none;
 	text-transform: uppercase;
 }
@@ -1027,7 +1027,7 @@ li.page_item a{
 	display: none;
 }
 
-#page-item-38{
+#page-menu-item-79{
 	display: flex;
 }
 
