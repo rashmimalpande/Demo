@@ -75,10 +75,10 @@
 							<?php if( get_theme_mod('footer-logo')): 
 								$id = get_theme_mod('footer-logo');
 								$url = wp_get_attachment_url($id);
-								echo '<img src="'.$url.'">';
+								echo '<img class="pull-right" src="'.$url.'">';
 							?>
 							<?php else: ?>
-								<img src="<?php echo get_template_directory_uri().'/images/footer-logo.png'; ?> " width="200" height="30">
+								<img class="pull-right" src="<?php echo get_template_directory_uri().'/images/footer-logo.png'; ?> " width="200" height="30">
 							<?php endif; ?>
 					</div>
 

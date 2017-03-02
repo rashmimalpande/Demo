@@ -5,7 +5,22 @@ jQuery(document).ready(function(){
         items: 1,
         autoplayHoverPause: true,
         animateOut: 'slideOutUp',
-        animateIn: 'slideInUp'
+        animateIn: 'slideInUp',
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            700:{
+                items:1,
+                nav:false
+            },
+            1300:{
+                items:1,
+                nav:true,
+            }
+        }
     });
 
     var list = jQuery('.content-list');
@@ -13,5 +28,4 @@ jQuery(document).ready(function(){
         list.hide().filter('#page-'+ this.id).css({'display': 'flex'});
     });
 
-    
 });

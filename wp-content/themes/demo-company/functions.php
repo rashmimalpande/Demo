@@ -107,7 +107,7 @@ add_action( 'widgets_init', 'demo_company_widgets_init' );
 function demo_company_scripts() {
 	wp_enqueue_style( 'demo-company-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'demo-company-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	//wp_enqueue_script( 'demo-company-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'demo-company-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -331,7 +331,6 @@ function social_widget() {
 add_action( 'widgets_init', 'social_widget' );
 
 function demo_css() {
-        wp_enqueue_style('style', get_stylesheet_uri());
 		wp_enqueue_style('bootstrap', get_template_directory_uri() . '/lib/bootstrap.min.css');
 		wp_enqueue_style('owl.carousel', get_template_directory_uri(). '/lib/owl.carousel.min.css');
 		wp_enqueue_style('owl.theme.default', get_template_directory_uri(). '/lib/owl.theme.default.min.css');
@@ -376,6 +375,9 @@ function custom_excerpt_length( $length ) {
 	return 20;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+/* Bootstrap Navigation Menu */
+require_once('wp_bootstrap_navwalker.php');
 
  /* Implement the Custom Header feature.
  */
