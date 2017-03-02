@@ -784,10 +784,10 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
-.container{
+/*.container{
 	width: 1100px;
 	margin: 0 auto;
-}
+} */
 
 .header-container{
 	width: 100%;
@@ -986,12 +986,17 @@ object {
 	top: 0px;
 	color: #fff;
 	text-align: left;
-	margin-left: 20px;
+	margin: 20px 20px;
+	font-family: 'Georgia';
+	font-size: 24px;
 }
 
 .content p{
 	color: #fff;
 	margin: 20px;
+	font-family: 'Tahoma';
+	font-size: 14px;
+	color: #ccc;
 }
 .page-box{
 	width: 100%;
@@ -1016,12 +1021,25 @@ object {
 #display li.menu-item{
 	list-style: none;
 	padding: 20px;
+	
 }
 
 #display li.menu-item a{
 	text-decoration: none;
 	text-transform: uppercase;
+	color: #993408;
+	font-size: 17px;
+	font-family: 'Georgia';
 }
+
+#display li.menu-item:hover{
+	background: #993408;
+}
+
+#display li.menu-item:hover a{
+	color: #fff;
+}
+
 .content-list{
 	width: 70%;
 	display: none;
@@ -1045,6 +1063,18 @@ object {
 	margin: 20px;
 }
 
+.sub-page-content a{
+	font-family: 'Georgia';
+	font-size: 15px;
+	color: #000;
+}
+
+.sub-page-content p{
+	font-family: 'Tahoma';
+	font-size: 13px;
+	color: #333;
+}
+
 .site-footer{
 	width: 100%;
 	height: 100%;
@@ -1053,14 +1083,31 @@ object {
 .footer-main{
 	width: 100%;
 	background: #f8f8f8;;
-	height: 300px;
+	height: 100%;
 }
 
 .footer-top{
 	width: 100%;
 	height: 100%;
 	display: flex;
+	flex-wrap: nowrap;
+}
 
+.footer-top .widget-title{
+	font-family: 'Tahoma';
+	font-size: 15px;
+	color: #888;
+}
+
+.footer-top ul li a{
+	font-family: 'Tahoma';
+	font-size: 13px;
+	color: #888;
+	text-decoration: none;
+}
+
+.footer-top ul li a:hover{
+	color: #993408;
 }
 
 .footer-col-1,
@@ -1069,6 +1116,7 @@ object {
 .footer-col-4{
 	width: 25%;
 	margin-right: 20px;
+	padding-top: 20px;
 }
 
 .widget-title{
@@ -1101,6 +1149,16 @@ object {
 	padding-top: 20px;
 }
 
+#footer-menu a{
+	font-family: 'Tahoma';
+	font-size: 13px;
+	color: #666;
+}
+
+#footer-menu a:hover{
+	color: #993408;
+}
+
 #footer-menu .menu-item{
 	list-style: none;
 	display: inline;
@@ -1110,6 +1168,7 @@ object {
 .footer-info{
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .footer-bottom{
@@ -1119,5 +1178,65 @@ object {
 .footer-logo{
 	float: right;
 	padding-top: 20px;
+	width: 40%;
 }
 
+.company-info{
+	font-family: 'Tahoma';
+	font-size: 13px;
+	color: #999;
+	padding-top: 5px;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots{
+	margin-top: 0px !important;
+}
+
+@media only screen and (max-width: 700px){
+	.pages{
+		height: 100%;
+	}
+	.page-box{
+		width: 100%;
+		height: 100%;
+		flex-wrap: wrap;
+	}
+
+	.sub-page-title {
+		width: 100%;
+	}
+
+	.content-list{
+		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	.sub-page-col{
+		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	.footer-info{
+		flex-wrap: wrap;
+	}
+
+	.footer-bottom,
+	.footer-logo,
+	.footer-col-1,
+	.footer-col-2,
+	.footer-col-3,
+	.footer-col-4{
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 1200px){
+	.pages,
+	.page-box{
+		height: 100%;
+	}
+
+	.footer-top{
+		flex-wrap: nowrap;
+	}
+}

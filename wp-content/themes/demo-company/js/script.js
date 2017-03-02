@@ -11,7 +11,6 @@ jQuery(document).ready(function(){
     var list = jQuery('.content-list');
     jQuery('#display .menu-item').mouseover(function(){
         list.hide().filter('#page-'+ this.id).css({'display': 'flex'});
-
     });
 
     
