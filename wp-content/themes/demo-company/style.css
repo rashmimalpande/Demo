@@ -1211,6 +1211,10 @@ object {
 
 }
 
+.textwidget img{
+	margin-bottom: 15px;
+}
+
 @media (min-width:768px){
 	 .navbar-collapse.collapse {
         display: none!important;
