@@ -457,7 +457,7 @@ function Custom_Excerpt_length( $length )
 add_filter('excerpt_length', 'Custom_Excerpt_length', 999);
 
 /* Bootstrap Navigation Menu */
-require_once 'wp_bootstrap_navwalker.php';
+require_once '/lib/wp_bootstrap_navwalker.php';
 
  /* Implement the Custom Header feature.
  */
